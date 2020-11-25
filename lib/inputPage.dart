@@ -47,7 +47,7 @@ class _InputPageState extends State<InputPage> {
                         ? activeColor
                         : deActiveColor,
                     cardWidget: RepeatIconAndText(
-                      iconData: FontAwesomeIcons.male,
+                      iconData: FontAwesomeIcons.mars,
                       label: 'MALE',
                     ),
                   ),
@@ -63,7 +63,7 @@ class _InputPageState extends State<InputPage> {
                         ? activeColor
                         : deActiveColor,
                     cardWidget: RepeatIconAndText(
-                      iconData: FontAwesomeIcons.female,
+                      iconData: FontAwesomeIcons.venus,
                       label: 'FeMALE',
                     ),
                   ),
