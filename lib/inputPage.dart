@@ -5,6 +5,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'containerCode.dart';
 import 'iconANDtext.dart';
 
+enum Gender {
+  male,
+  female,
+}
 const activeColor = Color(0xFF1D1E33);
 const deActiveColor = Color(0xFF111828);
 
@@ -16,12 +20,12 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color maleColor = activeColor;
   Color femaleColor = deActiveColor;
-  void updateColor(int gender) {
-    if (gender == 1) {
+  void updateColor(Gender genderType) {
+    if (genderType == Gender.male) {
       maleColor = activeColor;
       femaleColor = deActiveColor;
     }
-    if (gender == 2) {
+    if (genderType == Gender.female) {
       femaleColor = activeColor;
       maleColor = deActiveColor;
     }
@@ -42,7 +46,7 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(1);
+                        updateColor(Gender.male);
                       });
                     },
                     child: RepeatContainerCode(
@@ -58,7 +62,7 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(2);
+                        updateColor(Gender.female);
                       });
                     },
                     child: RepeatContainerCode(
