@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'calculatorBrainFile.dart';
 import 'constantFile.dart';
 import 'containerCode.dart';
 import 'iconANDtext.dart';
@@ -203,8 +204,16 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultScreen()));
+              calculatorBrain cal =
+                  calculatorBrain(height: sliderHeight, weight: sliderWeight);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ResultScreen(
+                            bmiResult: cal.calculateBMI(),
+                            bmiText: cal.getResult(),
+                            bmiInterpret: cal.getInterpretation(),
+                          )));
             },
             child: Container(
               child: Center(
