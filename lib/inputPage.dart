@@ -18,18 +18,19 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleColor = activeColor;
-  Color femaleColor = deActiveColor;
-  void updateColor(Gender genderType) {
-    if (genderType == Gender.male) {
-      maleColor = activeColor;
-      femaleColor = deActiveColor;
-    }
-    if (genderType == Gender.female) {
-      femaleColor = activeColor;
-      maleColor = deActiveColor;
-    }
-  }
+  Gender selectedGender;
+  // Color maleColor = activeColor;
+  // Color femaleColor = deActiveColor;
+  // void updateColor(Gender genderType) {
+  //   if (genderType == Gender.male) {
+  //     maleColor = activeColor;
+  //     femaleColor = deActiveColor;
+  //   }
+  //   if (genderType == Gender.female) {
+  //     femaleColor = activeColor;
+  //     maleColor = deActiveColor;
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +47,13 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(Gender.male);
+                        selectedGender = Gender.male;
                       });
                     },
                     child: RepeatContainerCode(
-                      colors: maleColor, //Color(0xff1d1e33),
+                      colors: selectedGender == Gender.male
+                          ? activeColor
+                          : deActiveColor,
                       cardWidget: RepeatIconAndText(
                         iconData: FontAwesomeIcons.male,
                         label: 'MALE',
@@ -62,11 +65,13 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(Gender.female);
+                        selectedGender = Gender.female;
                       });
                     },
                     child: RepeatContainerCode(
-                      colors: femaleColor, //Color(0xff1d1e33),
+                      colors: selectedGender == Gender.female
+                          ? activeColor
+                          : deActiveColor,
                       cardWidget: RepeatIconAndText(
                         iconData: FontAwesomeIcons.female,
                         label: 'FeMALE',
