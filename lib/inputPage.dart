@@ -116,6 +116,23 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: RepeatContainerCode(
                     colors: Color(0xff1d1e33),
+                    cardWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: kLabelStyle,
+                        ),
+                        Text(
+                          sliderWeight.toString(),
+                          style: kNumTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
