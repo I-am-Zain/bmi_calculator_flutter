@@ -1,7 +1,9 @@
+import 'package:bmi_calculator/constantFile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'constantFile.dart';
 import 'containerCode.dart';
 import 'iconANDtext.dart';
 
@@ -9,8 +11,6 @@ enum Gender {
   male,
   female,
 }
-const activeColor = Color(0xFF1D1E33);
-const deActiveColor = Color(0xFF111828);
 
 class InputPage extends StatefulWidget {
   @override
@@ -19,19 +19,6 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  // Color maleColor = activeColor;
-  // Color femaleColor = deActiveColor;
-  // void updateColor(Gender genderType) {
-  //   if (genderType == Gender.male) {
-  //     maleColor = activeColor;
-  //     femaleColor = deActiveColor;
-  //   }
-  //   if (genderType == Gender.female) {
-  //     femaleColor = activeColor;
-  //     maleColor = deActiveColor;
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +26,7 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -81,6 +69,15 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: RepeatContainerCode(
               colors: Color(0xff1d1e33),
+              cardWidget: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'HEIGHT',
+                    style: kLabelStyle,
+                  ),
+                ],
+              ),
             ),
           ),
           Expanded(
