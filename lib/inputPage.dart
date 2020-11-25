@@ -213,7 +213,7 @@ class _InputPageState extends State<InputPage> {
                   style: kLargeBtnStyle,
                 ),
               ),
-              color: Color(0xffeb15555),
+              color: Color(0xffeb1555),
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
               height: 80.0,
