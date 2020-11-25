@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/constantFile.dart';
+import 'package:bmi_calculator/resultFile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -200,11 +201,23 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: Color(0xffeb15555),
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: 80.0,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ResultScreen()));
+            },
+            child: Container(
+              child: Center(
+                child: Text(
+                  'CALCULATE',
+                  style: kLargeBtnStyle,
+                ),
+              ),
+              color: Color(0xffeb15555),
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: 80.0,
+            ),
           ),
         ],
       ),
