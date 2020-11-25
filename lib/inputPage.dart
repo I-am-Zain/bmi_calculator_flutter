@@ -44,38 +44,34 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: RepeatContainerCode(
+                    onPressed: () {
                       setState(() {
                         selectedGender = Gender.male;
                       });
                     },
-                    child: RepeatContainerCode(
-                      colors: selectedGender == Gender.male
-                          ? activeColor
-                          : deActiveColor,
-                      cardWidget: RepeatIconAndText(
-                        iconData: FontAwesomeIcons.male,
-                        label: 'MALE',
-                      ),
+                    colors: selectedGender == Gender.male
+                        ? activeColor
+                        : deActiveColor,
+                    cardWidget: RepeatIconAndText(
+                      iconData: FontAwesomeIcons.male,
+                      label: 'MALE',
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: RepeatContainerCode(
+                    onPressed: () {
                       setState(() {
                         selectedGender = Gender.female;
                       });
                     },
-                    child: RepeatContainerCode(
-                      colors: selectedGender == Gender.female
-                          ? activeColor
-                          : deActiveColor,
-                      cardWidget: RepeatIconAndText(
-                        iconData: FontAwesomeIcons.female,
-                        label: 'FeMALE',
-                      ),
+                    colors: selectedGender == Gender.female
+                        ? activeColor
+                        : deActiveColor,
+                    cardWidget: RepeatIconAndText(
+                      iconData: FontAwesomeIcons.female,
+                      label: 'FeMALE',
                     ),
                   ),
                 ),
